@@ -4,6 +4,31 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Dark mode: toggles a 'dark' class on <body>; the choice lasts for the browser session.
+  var THEME_KEY = 'yk-site-theme';
+  var toggle = document.getElementById('theme-toggle');
+
+  function readTheme() {
+    try { return sessionStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+
+  function saveTheme(value) {
+    try { sessionStorage.setItem(THEME_KEY, value); } catch (e) { /* storage unavailable */ }
+  }
+
+  function applyTheme(isDark) {
+    document.body.classList.toggle('dark', isDark);
+    toggle.setAttribute('aria-pressed', String(isDark));
+  }
+
+  applyTheme(readTheme() === 'dark');
+
+  toggle.addEventListener('click', function () {
+    var isDark = !document.body.classList.contains('dark');
+    applyTheme(isDark);
+    saveTheme(isDark ? 'dark' : 'light');
+  });
+
   var list = document.getElementById('repo-list');
 
   function showMessage(text) {
