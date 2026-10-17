@@ -1,16 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tan Ye Kai | Software Engineer</title>
+  <title>Tan Ye Kai · Software Engineer</title>
   <meta name="description" content="Tan Ye Kai: Software Engineering student at SIT building LLM-powered tools and system integrations. Open to a 12-month internship from May 2027.">
-  <meta property="og:title" content="Tan Ye Kai | Software Engineer">
+  <meta name="theme-color" content="#09090b">
+  <meta property="og:title" content="Tan Ye Kai · Software Engineer">
   <meta property="og:description" content="Software Engineering student at SIT building LLM-powered tools and system integrations.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tyklol.github.io/yk-site/">
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232357d6'/><text x='16' y='21.5' font-family='system-ui,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>YK</text></svg>">
+  <script>
+    document.documentElement.className = 'js';
+    try { if (localStorage.getItem('yk-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23818cf8'/><stop offset='1' stop-color='%232dd4bf'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='url(%23g)'/><text x='16' y='21.5' font-family='system-ui,sans-serif' font-size='14' font-weight='700' fill='%2309090b' text-anchor='middle'>YK</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,239 +25,431 @@
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="nav-brand" href="#hero">Tan Ye Kai</a>
+      <a class="brand" href="#hero"><span class="brand-mark" aria-hidden="true">YK</span><span class="brand-name">Tan Ye Kai</span></a>
       <ul class="nav-links">
+        <li class="hide-sm"><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
-            Dark mode
-          </button>
-        </li>
       </ul>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
     </nav>
+    <div class="progress" aria-hidden="true"></div>
   </header>
 
   <main id="main">
     <section id="hero" class="hero">
-      <div class="container">
-        <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to a 12-month internship, May 2027 to Apr 2028</p>
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-lines"></div>
+      </div>
+      <div class="container hero-inner">
+        <p class="pill"><span class="pulse" aria-hidden="true"></span>Open to a 12-month internship · May 2027</p>
         <h1>Tan Ye Kai</h1>
-        <p class="role">Software Engineering student at the Singapore Institute of Technology</p>
-        <p class="tagline">I build LLM-powered tools and system integrations: the kind of software where separate systems have to agree with each other reliably.</p>
-        <ul class="link-row">
-          <li><a class="btn btn-primary" href="mailto:yekai.tyk@gmail.com">Email me</a></li>
-          <li><a class="btn" href="https://github.com/tyklol" rel="noopener">GitHub</a></li>
-          <li><a class="btn" href="https://www.linkedin.com/in/ye-kai-tan/" rel="noopener">LinkedIn</a></li>
-        </ul>
+        <p class="lead">Software engineer building <span class="grad">LLM-powered tools</span> and <span class="grad">system integrations</span> that hold up in production.</p>
+        <p class="sub">Third-year Software Engineering student at SIT. Right now I'm working with SP Group on a live billing pipeline for Singapore's largest private microgrid.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">View my work
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="mailto:yekai.tyk@gmail.com">Get in touch</a>
+          <a class="icon-btn" href="https://github.com/tyklol" rel="noopener" aria-label="GitHub">
+            <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3"/></svg>
+          </a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/ye-kai-tan/" rel="noopener" aria-label="LinkedIn">
+            <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+        <dl class="stats">
+          <div><dt>CGPA at SIT, out of 5.00</dt><dd data-count="3.99">3.99</dd></div>
+          <div><dt>AI Vision Hackathon, Aug 2026</dt><dd>1st</dd></div>
+          <div><dt>tools in Bench, my AI workbench</dt><dd data-count="70">70</dd></div>
+          <div><dt>projects built since 2021</dt><dd data-count="20" data-suffix="+">20+</dd></div>
+        </dl>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="container">
-        <h2 class="section-title">About</h2>
+        <div class="section-head reveal">
+          <p class="kicker">01 · About</p>
+          <h2>I like making separate systems agree.</h2>
+        </div>
         <div class="about-grid">
-          <div>
-            <p>I'm a third-year Software Engineering student at SIT. Most of what I build connects real systems: energy meters to a billing database, a local LLM to a set of tools, a marketplace to a Telegram digest.</p>
-            <p>I work spec-first, often with AI coding agents doing the typing, and I test on real devices and real data before calling something done. I care about software that fails safely and is easy to read.</p>
+          <div class="about-text reveal">
+            <p>Most of what I build connects real things: <strong>energy meters to a billing database</strong>, <strong>a local LLM to a set of tools</strong>, <strong>a marketplace to a Telegram digest</strong>. The interesting part is rarely the happy path. It's what happens when a file can't be decrypted, a model is down, or a scheduler starts twice.</p>
+            <p>I work spec-first, often with AI coding agents doing the typing, and I test on real devices and real data before calling something done. I care about software that fails safely and code that's easy to read.</p>
           </div>
-          <dl class="facts">
-            <div><dt>Education</dt><dd>BEng (Hons) ICT, Software Engineering, SIT<br><span class="muted">CGPA 3.99 / 5.00 · 2024 to present</span></dd></div>
-            <div><dt>Diploma</dt><dd>Information Technology, Singapore Polytechnic<br><span class="muted">CGPA 3.64 / 4.00 · 2019 to 2022</span></dd></div>
-            <div><dt>Award</dt><dd>1st Place, AI Vision Hackathon<br><span class="muted">FPT University Da Nang · Aug 2026</span></dd></div>
+          <dl class="card now reveal" style="--d: 1">
+            <div><dt>Now</dt><dd>Billing pipeline for the SIT × SP Group microgrid</dd></div>
+            <div><dt>Studying</dt><dd>BEng (Hons) Software Engineering, SIT · CGPA 3.99 / 5.00</dd></div>
+            <div><dt>Before</dt><dd>Diploma in IT, Singapore Polytechnic · CGPA 3.64 / 4.00</dd></div>
+            <div><dt>Looking for</dt><dd>A 12-month internship, May 2027 to April 2028</dd></div>
           </dl>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section alt">
+    <section id="experience" class="section">
       <div class="container">
-        <h2 class="section-title">Experience</h2>
+        <div class="section-head reveal">
+          <p class="kicker">02 · Experience</p>
+          <h2>Where I've worked.</h2>
+        </div>
         <ol class="timeline">
-          <li class="entry">
-            <p class="entry-date">Jun 2026 to present</p>
-            <div>
-              <h3>Tenant billing pipeline · SIT × SP Group</h3>
+          <li class="entry reveal">
+            <article class="card spot">
+              <header class="entry-head">
+                <h3>Tenant billing pipeline <span class="at">· SIT × SP Group</span></h3>
+                <p class="entry-date">Jun 2026 to present</p>
+              </header>
               <p class="entry-sub">Punggol Campus Multi-Energy Microgrid · Integrative Team Project, team of 4</p>
               <ul class="bullets">
-                <li>Automated billing for Singapore's largest private microgrid: reads every tenant's energy meter each minute (Modbus TCP), stores it in PostgreSQL and produces the monthly bills sent to SP Services. Deployed and running.</li>
+                <li>Automated billing for Singapore's largest private microgrid: reads every tenant's energy meter each minute over Modbus TCP, stores it in PostgreSQL and produces the monthly bills sent to SP Services. Deployed and running.</li>
                 <li>Bills go out PGP-encrypted over SFTP; SP Services' feedback files come back and are reconciled automatically. Files that can't be read are quarantined for review, never dropped.</li>
                 <li>My part of the operator portal: meter and gateway setup, tariff changes, catch-up billing so downtime never causes a missed month, TOTP 2FA recovery, and hardening for public access.</li>
                 <li>Added alerts that name the failing meter and gateway, and checks that stop the scheduler double-running or stalling.</li>
               </ul>
               <ul class="tags"><li>Python</li><li>Flask</li><li>PostgreSQL</li><li>Docker</li><li>PGP / SFTP</li><li>React</li></ul>
-            </div>
+            </article>
           </li>
-          <li class="entry">
-            <p class="entry-date">Mar 2021 to Sep 2021</p>
-            <div>
-              <h3>Software Tester · Beyondsoft Singapore</h3>
+          <li class="entry reveal">
+            <article class="card spot">
+              <header class="entry-head">
+                <h3>Software Tester <span class="at">· Beyondsoft Singapore</span></h3>
+                <p class="entry-date">Mar 2021 to Sep 2021</p>
+              </header>
               <p class="entry-sub">6-month internship (Grade A), then contract</p>
               <ul class="bullets">
                 <li>Tested pre-release printers before market launch, including long-running hardware endurance tests.</li>
                 <li>Ran test cases, logged and tracked defects, and re-tested fixes with the development team before release.</li>
               </ul>
-            </div>
+            </article>
+          </li>
+          <li class="entry entry-small reveal">
+            <p><strong>National Service</strong> <span class="muted">· Aug 2022 to Aug 2024</span></p>
           </li>
         </ol>
-        <p class="muted small">National Service, Aug 2022 to Aug 2024.</p>
       </div>
     </section>
 
     <section id="projects" class="section">
       <div class="container">
-        <h2 class="section-title">Selected projects</h2>
-        <div class="projects">
-          <article class="project">
-            <header>
-              <h3>Bench</h3>
-              <p class="project-meta">Personal · Sep to Oct 2026</p>
-            </header>
-            <p>A desktop toolkit with a local AI assistant. About 70 tools (PDF, media, transcription, files) behind one interface; you can ask for a job in plain English and a local model plans it.</p>
-            <ul class="bullets">
-              <li>Each tool is declared once; that declaration generates its form, REST endpoint and LLM function-calling schema.</li>
-              <li>A local Qwen model chains up to 4 tool calls, with hard limits on what it may run. 40/40 on a routing eval; 465 automated checks.</li>
-            </ul>
+        <div class="section-head reveal">
+          <p class="kicker">03 · Projects</p>
+          <h2>Things I've built.</h2>
+          <p class="section-sub">Personal projects, apps and the team projects I'm proudest of. Open any card for the details.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI &amp; LLM</button>
+          <button class="filter" type="button" data-filter="systems" aria-pressed="false">Systems</button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project card spot reveal" data-cat="ai">
+            <div class="project-top"><span class="project-cat">AI · Desktop app</span><span>2026</span></div>
+            <h3>Bench</h3>
+            <p class="project-sum">A local workbench with about 70 tools (PDF, media, transcription, files) and an assistant that turns plain-English requests into tool chains.</p>
+            <p class="project-stat"><strong>70</strong> tools, each declared once</p>
             <ul class="tags"><li>Python</li><li>FastAPI</li><li>JavaScript</li><li>SQLite</li><li>Ollama</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <p>One <code>@tool</code> declaration with typed parameters generates the GUI form, the REST endpoint and the LLM function-calling schema, so adding a tool never touches the UI, API or job runner.</p>
+              <ul class="bullets">
+                <li>"Ask Bench": a local Qwen 2.5 3B model plans chains of up to 4 tools, fills parameters and reads results back, in 0.2 to 0.5 s per answer. 40 of 40 on a routing eval.</li>
+                <li>Hard safety rails: the model can't tick "book" or "apply" switches, never fills file fields from model text, and only creates new files. Falls back to keyword routing when no model is running.</li>
+                <li>Job lanes with cancellation and chaining, SQLite history with a permanent archive, a sealed mode, and passcode-protected phone access.</li>
+                <li>465 automated integration and headless-browser checks.</li>
+              </ul>
+              <p class="details-note">Personal project · about 34k lines · private repo</p>
+            </div>
           </article>
 
-          <article class="project">
-            <header>
-              <h3>CarouWatcher</h3>
-              <p class="project-meta">Personal · Oct 2026</p>
-            </header>
-            <p>An AI listing filter for Carousell. A quick first pass screens search results; a second pass reads each full listing against my criteria; matches arrive as one Telegram digest.</p>
-            <ul class="bullets">
-              <li>Parallel page fetching cut 20 listings from about 100 s to 31 s.</li>
-              <li>API-key rotation and model fallback; if the AI is down the run fails closed, so no listing is skipped unseen.</li>
-            </ul>
-            <ul class="tags"><li>Python</li><li>Selenium</li><li>Gemini API</li><li>SQLite</li><li>Telegram</li></ul>
+          <article class="project card spot reveal" data-cat="systems">
+            <div class="project-top"><span class="project-cat">Desktop app</span><span>2026</span></div>
+            <h3>Desktop Cat</h3>
+            <p class="project-sum">Cats, dogs, rabbits and hamsters that live on your desktop. They walk the taskbar, climb window title bars, nap and bat at your cursor.</p>
+            <p class="project-stat"><strong>20k</strong> lines of TypeScript, v1.0 installer</p>
+            <ul class="tags"><li>Electron</li><li>TypeScript</li><li>Canvas</li><li>Web Audio</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>One transparent overlay per display with per-pixel click-through, so it never steals focus. Hides itself for fullscreen games and video.</li>
+                <li>Native window data through FFI: Win32 and DWM on Windows, CoreGraphics on macOS, wmctrl on X11.</li>
+                <li>A needs-based utility-AI brain with mood and memory, simulated at an adaptive 8 to 60 Hz.</li>
+                <li>Procedural art (12 body types, 28 coats), synthesised sounds, and hand-written GIF, APNG and animated WebP decoders for skin packs.</li>
+                <li>Crash-safe saves: write to a temp file, fsync, rename, with backup recovery.</li>
+              </ul>
+              <p class="details-note">Personal project · Windows installer, macOS and Linux supported in code</p>
+            </div>
           </article>
 
-          <article class="project">
-            <header>
-              <h3>Desktop Cat</h3>
-              <p class="project-meta">Personal · 2026 · v1.0 installer</p>
-            </header>
-            <p>Pets that live on your desktop: they walk the taskbar, climb window title bars and bat at your cursor, without ever stealing focus.</p>
-            <ul class="bullets">
-              <li>Per-pixel click-through overlay, with native window data via FFI (Win32 / DWM, CoreGraphics, X11).</li>
-              <li>A utility-AI behaviour engine, procedural art, synthesised audio and hand-written GIF / APNG / WebP decoders. About 20k lines of TypeScript.</li>
-            </ul>
-            <ul class="tags"><li>Electron</li><li>TypeScript</li><li>Canvas</li><li>Web Audio</li><li>Vitest</li></ul>
+          <article class="project card spot reveal" data-cat="ai">
+            <div class="project-top"><span class="project-cat">AI · Automation</span><span>2026</span></div>
+            <h3>CarouWatcher</h3>
+            <p class="project-sum">Watches Carousell for listings I want. A quick AI pass screens results, a second reads each full listing against my notes, and matches arrive as one Telegram digest.</p>
+            <p class="project-stat"><strong>100 s → 31 s</strong> for 20 listings</p>
+            <ul class="tags"><li>Python</li><li>Selenium</li><li>Gemini API</li><li>SQLite</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Two-stage Gemini filtering: a lenient screen over the search grid, then a strict judge over each full page.</li>
+                <li>Four headless workers fetch listings in parallel, cutting 20 listings from about 100 s to 31 s.</li>
+                <li>Five-key rotation with back-off on rate limits and model fallback on outages. Runs fail closed: nothing is marked seen if the AI is down.</li>
+                <li>SQLite run history, a log of every decision, liveness alerts and a small web viewer.</li>
+              </ul>
+              <p class="details-note">Personal project · private repo</p>
+            </div>
           </article>
 
-          <article class="project">
-            <header>
-              <h3>Autonomous robot car</h3>
-              <p class="project-meta">Embedded Systems module · 2025 · team of 2</p>
-            </header>
-            <p>FreeRTOS firmware for a line-following robot car on a Raspberry Pi Pico W, with live telemetry to a web dashboard.</p>
-            <ul class="bullets">
-              <li>PID speed control with encoder, IMU and IR sensor input; drivers and unit, integration and system tests in C.</li>
-              <li>Telemetry streamed over MQTT to a real-time Next.js dashboard.</li>
-            </ul>
+          <article class="project card spot reveal" data-cat="systems">
+            <div class="project-top"><span class="project-cat">Embedded</span><span>2025</span></div>
+            <h3>Autonomous robot car</h3>
+            <p class="project-sum">FreeRTOS firmware for a line-following robot car on a Raspberry Pi Pico W, streaming live telemetry to a web dashboard.</p>
+            <p class="project-stat"><strong>PID</strong> control from encoder, IMU and IR input</p>
             <ul class="tags"><li>C</li><li>FreeRTOS</li><li>MQTT</li><li>Next.js</li></ul>
-            <a class="project-link" href="https://github.com/tyklol/INF2004-Robot-Car" rel="noopener">Source on GitHub</a>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Drivers for PWM motors, wheel encoders, an IMU and IR line sensors, feeding a PID speed controller with a filtered derivative.</li>
+                <li>Wi-Fi through lwIP and MQTT telemetry to a Mosquitto broker, shown live on a Next.js dashboard.</li>
+                <li>Unit, integration and system tests for the encoder, motor and PID layers, plus Python tuning scripts.</li>
+              </ul>
+              <p class="details-note">Embedded Systems Programming module · team of 2 · <a href="https://github.com/tyklol/INF2004-Robot-Car" rel="noopener">source on GitHub</a></p>
+            </div>
           </article>
 
-          <article class="project">
-            <header>
-              <h3>Semantic course search (UCMS)</h3>
-              <p class="project-meta">Database Systems module · 2025 · team of 6</p>
-            </header>
-            <p>A course portal where students find modules in natural language. Top contributor; I led semantic search and cloud hosting.</p>
-            <ul class="bullets">
-              <li>Modules embedded with sentence-transformers and queried with MongoDB Atlas Vector Search; results hydrated from MySQL.</li>
-              <li>Hosted and seeded both databases in the cloud.</li>
-            </ul>
-            <ul class="tags"><li>Python</li><li>Flask</li><li>MySQL</li><li>MongoDB</li><li>Vector search</li></ul>
-            <a class="project-link" href="https://github.com/panyc63/INF2003-Assignment" rel="noopener">Source on GitHub</a>
+          <article class="project card spot reveal" data-cat="web ai">
+            <div class="project-top"><span class="project-cat">Web · Search</span><span>2025</span></div>
+            <h3>Semantic course search</h3>
+            <p class="project-sum">A university course portal where students find modules by describing them in plain English, backed by both MySQL and MongoDB.</p>
+            <p class="project-stat"><strong>Top</strong> contributor in a team of 6</p>
+            <ul class="tags"><li>Flask</li><li>MySQL</li><li>MongoDB</li><li>Vector search</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <p>I led semantic search and cloud hosting.</p>
+              <ul class="bullets">
+                <li>Module descriptions embedded with sentence-transformers and queried with MongoDB Atlas Vector Search; matching IDs are hydrated from MySQL.</li>
+                <li>Hybrid vector and keyword search that recognises academic terms like "Year 1 Trimester 2".</li>
+                <li>A live MySQL / MongoDB toggle behind a service facade, with dashboards for students, instructors and admins.</li>
+                <li>Hosted and seeded both databases in the cloud.</li>
+              </ul>
+              <p class="details-note">Database Systems module · <a href="https://github.com/panyc63/INF2003-Assignment" rel="noopener">source on GitHub</a></p>
+            </div>
           </article>
 
-          <article class="project">
-            <header>
-              <h3>Smart Haven</h3>
-              <p class="project-meta">Web Systems module · 2025 · team of 5</p>
-            </header>
-            <p>A full-stack smart-home store. Main contributor: React single-page app with login, cart and protected routes, on a PHP and MySQL API, plus an admin panel.</p>
-            <ul class="bullets">
-              <li>Prepared statements for every query; interface tested against WCAG accessibility guidelines.</li>
-            </ul>
-            <ul class="tags"><li>React</li><li>PHP</li><li>MySQL</li><li>Bootstrap</li></ul>
+          <article class="project card spot reveal" data-cat="ai">
+            <div class="project-top"><span class="project-cat">AI · Media</span><span>2026</span></div>
+            <h3>AI Shorts generator</h3>
+            <p class="project-sum">Turns a raw movie clip into a narrated, captioned vertical short, with its title, tags and description, in one command.</p>
+            <p class="project-stat"><strong>5</strong> ML models in one pipeline</p>
+            <ul class="tags"><li>Python</li><li>ffmpeg</li><li>Whisper</li><li>Gemini</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Scene detection and keyframes with ffmpeg. Whisper large-v3 transcribes dialogue and an AudioSet model tags sound effects.</li>
+                <li>Gemini writes the script from a contact sheet and Wikipedia research. Output outside 70 to 160 words is rejected and retried on the next model.</li>
+                <li>Kokoro text-to-speech for narration, with karaoke-style captions.</li>
+                <li>YOLOS person detection picks each 9:16 crop; one GPU-encoded ffmpeg pass cuts, crops, burns captions and mixes audio.</li>
+              </ul>
+              <p class="details-note">Personal project · private repo</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="mobile">
+            <div class="project-top"><span class="project-cat">Android</span><span>2026</span></div>
+            <h3>Cardex</h3>
+            <p class="project-sum">A booster-pack opening simulator for Pokémon, K-pop and Match Attax cards, with a GPU holo-foil shader and about 8,000 cards.</p>
+            <ul class="tags"><li>Kotlin</li><li>Compose</li><li>AGSL</li><li>Python</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>A Jetpack Compose app of about 25k lines, shipped across 22 APK versions.</li>
+                <li>The holo-foil effect is an AGSL runtime shader, with a gradient fallback on older devices.</li>
+                <li>A Python data pipeline scrapes card data with one worker per IP, retries rate limits, upscales art with Real-ESRGAN and compresses it to WebP.</li>
+              </ul>
+              <p class="details-note">Personal project · hobby app, no monetisation</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="mobile">
+            <div class="project-top"><span class="project-cat">Android</span><span>2026</span></div>
+            <h3>File Manager</h3>
+            <p class="project-sum">An Android file manager built around one rule: never lose a file.</p>
+            <ul class="tags"><li>Java</li><li>Material 3</li><li>ExoPlayer</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Moves are renames where possible. Otherwise: copy to a hidden temp file, verify, fsync, rename, and only then delete the source.</li>
+                <li>A recycle bin with undo; nothing is overwritten without an explicit Replace.</li>
+                <li>No I/O on the main thread: one worker for every change, and a thumbnail pool that favours visible rows.</li>
+                <li>Duplicate and empty-folder finders, batch rename, zip, and image, text, PDF and video viewers.</li>
+              </ul>
+              <p class="details-note">Personal project · about 11.5k lines · no network permission</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="systems web">
+            <div class="project-top"><span class="project-cat">C++ · WebAssembly</span><span>In progress</span></div>
+            <h3>BikeL</h3>
+            <p class="project-sum">A bicycle lighting design suite where the same C++ engine drives a 3D browser preview and the bike's firmware.</p>
+            <ul class="tags"><li>C++</li><li>WebAssembly</li><li>React</li><li>Three.js</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <p>The idea: the preview <em>is</em> the firmware.</p>
+              <ul class="bullets">
+                <li>One C++ lighting engine compiled to WebAssembly for the browser and natively for hardware.</li>
+                <li>A four-step studio (bike, parts, effects, build) with a Three.js preview and bikes generated from geometry charts.</li>
+                <li>An electrical simulator with rule checking, a bill of materials and harness drawings.</li>
+              </ul>
+              <p class="details-note">Personal project · spec-driven TypeScript monorepo · ESP32 firmware next</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="web">
+            <div class="project-top"><span class="project-cat">Web app · Privacy</span><span>2026</span></div>
+            <h3>Lucid</h3>
+            <p class="project-sum">A private dream journal and lucid-dreaming trainer that never touches the network.</p>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>Web Crypto</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Entries are encrypted in the browser with AES-GCM-256, using a key derived with PBKDF2 (310k iterations).</li>
+                <li>A Content Security Policy blocks all network access; data lives in IndexedDB.</li>
+                <li>A reality-check scheduler with quiet hours, dream-sign analysis, stats and an idle lock, with unit tests for the core logic.</li>
+              </ul>
+              <p class="details-note">Personal project · private repo</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="mobile ai">
+            <div class="project-top"><span class="project-cat">Android · On-device ML</span><span>2026</span></div>
+            <h3>TranslationLens</h3>
+            <p class="project-sum">Point the camera at an object to learn its name in another language, fully offline. Top contributor in a team of 6.</p>
+            <ul class="tags"><li>Kotlin</li><li>CameraX</li><li>ML Kit</li><li>TFLite</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>CameraX feeds ML Kit object detection and a TensorFlow Lite classifier; ML Kit translates with downloadable language packs.</li>
+                <li>Offline speech with Vosk, spoken pronunciation, and saved vocabulary with XP, levels and streaks.</li>
+                <li>My part: language settings, permission handling, camera lifecycle, threading fixes and the gamification UI.</li>
+              </ul>
+              <p class="details-note">Mobile App Development module · team of 6</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="systems">
+            <div class="project-top"><span class="project-cat">Security</span><span>2026</span></div>
+            <h3>Signed steganography</h3>
+            <p class="project-sum">Hides an Ed25519-signed payload inside images, audio and video, then tells you whether it has been tampered with.</p>
+            <ul class="tags"><li>Python</li><li>PySide6</li><li>Ed25519</li><li>pytest</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>1 to 8-bit LSB embedding from a keyed, non-fixed start position, in images, WAV audio and lossless video.</li>
+                <li>Verification with Ed25519 and SHA-256 reports Authentic, Tampered or Signature Invalid, with replay protection.</li>
+                <li>My part: the attack lab and robustness layer (compression, cropping, noise, tampering) and the evidence test suite.</li>
+              </ul>
+              <p class="details-note">Cybersecurity module · team of 6 · <a href="https://github.com/tyouxg/INF2005-ACW1" rel="noopener">source on GitHub</a></p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="web">
+            <div class="project-top"><span class="project-cat">Web · Full stack</span><span>2025</span></div>
+            <h3>Smart Haven</h3>
+            <p class="project-sum">A smart-home store: a React single-page app on a PHP and MySQL API, with an admin panel. Main contributor in a team of 5.</p>
+            <ul class="tags"><li>React</li><li>PHP</li><li>MySQL</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Login, cart, checkout and protected routes, plus admin management of products, categories, orders and users.</li>
+                <li>Prepared statements for every query, and the interface tested against WCAG accessibility guidelines.</li>
+              </ul>
+              <p class="details-note">Web Systems module · team of 5</p>
+            </div>
+          </article>
+
+          <article class="project card spot reveal" data-cat="mobile">
+            <div class="project-top"><span class="project-cat">Android</span><span>2025</span></div>
+            <h3>SG Bus</h3>
+            <p class="project-sum">Live bus arrivals for Singapore, with a home-screen widget, arrival alerts and a route planner.</p>
+            <ul class="tags"><li>Kotlin</li><li>Compose</li><li>Room</li></ul>
+            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <ul class="bullets">
+                <li>Arrival times from LTA DataMall, place search with OneMap, and routes drawn on an OpenStreetMap map.</li>
+                <li>A home-screen widget, and notifications as your bus approaches.</li>
+              </ul>
+              <p class="details-note">Personal project</p>
+            </div>
           </article>
         </div>
-
-        <h3 class="subsection-title">Apps</h3>
-        <ul class="apps">
-          <li>
-            <h4>File Manager <span class="muted">· Android</span></h4>
-            <p>Built around never losing a file: verified copy, fsync, atomic rename and a recoverable bin. No I/O on the main thread.</p>
-            <p class="app-stack">Java · Material 3 · ExoPlayer</p>
-          </li>
-          <li>
-            <h4>Cardex <span class="muted">· Android</span></h4>
-            <p>A trading-card pack-opening simulator with a GPU holo-foil shader and about 8,000 cards from a Python data pipeline.</p>
-            <p class="app-stack">Kotlin · Jetpack Compose · AGSL</p>
-          </li>
-          <li>
-            <h4>SG Bus <span class="muted">· Android</span></h4>
-            <p>Live bus arrivals, a home-screen widget, arrival alerts and a route planner on an OpenStreetMap map.</p>
-            <p class="app-stack">Kotlin · Compose · LTA DataMall</p>
-          </li>
-          <li>
-            <h4>Lucid <span class="muted">· Web app</span></h4>
-            <p>A private dream journal and trainer. Local-only: entries are encrypted in the browser (AES-GCM), and CSP blocks all network access.</p>
-            <p class="app-stack">React · TypeScript · Web Crypto</p>
-          </li>
-        </ul>
-        <p class="muted small">Most personal projects are in private repositories. Happy to walk through the code on request.</p>
       </div>
     </section>
 
-    <section id="skills" class="section alt">
+    <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <dl class="skills">
-          <div><dt>Languages</dt><dd>Python, JavaScript, TypeScript, Kotlin, Java, C, SQL, PHP</dd></div>
-          <div><dt>Web &amp; backend</dt><dd>Flask, FastAPI, REST APIs, React</dd></div>
-          <div><dt>AI</dt><dd>Gemini API, Ollama, function calling and structured output, Whisper, vector search</dd></div>
-          <div><dt>Data</dt><dd>PostgreSQL, MySQL, SQLite, MongoDB</dd></div>
-          <div><dt>Mobile &amp; embedded</dt><dd>Android (Jetpack Compose), Electron, FreeRTOS on Pico W</dd></div>
-          <div><dt>Tools</dt><dd>Git, Docker, Selenium, Playwright, pytest, GitHub Actions, AI coding agents</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="repos" class="section">
-      <div class="container">
-        <h2 class="section-title">Public repositories</h2>
-        <div id="repo-list" class="repo-grid" aria-live="polite">
-          <p class="muted">Loading repositories…</p>
+        <div class="section-head reveal">
+          <p class="kicker">04 · Skills</p>
+          <h2>What I work with.</h2>
+        </div>
+        <div class="skill-grid">
+          <div class="card spot reveal"><h3>Languages</h3><ul class="tags"><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Kotlin</li><li>Java</li><li>C</li><li>C++</li><li>SQL</li><li>PHP</li></ul></div>
+          <div class="card spot reveal" style="--d: 1"><h3>Backend &amp; data</h3><ul class="tags"><li>FastAPI</li><li>Flask</li><li>REST APIs</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>SQLite</li><li>Docker</li></ul></div>
+          <div class="card spot reveal" style="--d: 2"><h3>AI &amp; ML</h3><ul class="tags"><li>Gemini API</li><li>Ollama</li><li>Function calling</li><li>Structured output</li><li>Whisper</li><li>Vector search</li><li>scikit-learn</li></ul></div>
+          <div class="card spot reveal"><h3>Apps &amp; frontend</h3><ul class="tags"><li>React</li><li>Next.js</li><li>Jetpack Compose</li><li>Electron</li><li>Tailwind</li></ul></div>
+          <div class="card spot reveal" style="--d: 1"><h3>Embedded &amp; systems</h3><ul class="tags"><li>FreeRTOS</li><li>Pico W</li><li>MQTT</li><li>Modbus TCP</li><li>WebAssembly</li></ul></div>
+          <div class="card spot reveal" style="--d: 2"><h3>Practice</h3><ul class="tags"><li>Git</li><li>GitHub Actions</li><li>pytest</li><li>Vitest</li><li>Playwright</li><li>AI coding agents</li></ul></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section alt">
+    <section id="contact" class="section">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p>I'm looking for a 12-month software engineering internship from May 2027. Email is the best way to reach me.</p>
-        <ul class="link-row">
-          <li><a class="btn btn-primary" href="mailto:yekai.tyk@gmail.com">yekai.tyk@gmail.com</a></li>
-          <li><a class="btn" href="https://github.com/tyklol" rel="noopener">GitHub</a></li>
-          <li><a class="btn" href="https://www.linkedin.com/in/ye-kai-tan/" rel="noopener">LinkedIn</a></li>
-        </ul>
+        <div class="cta card spot reveal">
+          <p class="kicker">05 · Contact</p>
+          <h2>Let's build something reliable.</h2>
+          <p>I'm looking for a 12-month software engineering internship from May 2027 to April 2028. Email is the fastest way to reach me.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:yekai.tyk@gmail.com">yekai.tyk@gmail.com</a>
+            <button id="copy-email" class="btn btn-ghost" type="button" data-email="yekai.tyk@gmail.com">Copy email</button>
+          </div>
+          <p class="cta-links">
+            <a href="https://github.com/tyklol" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/ye-kai-tan/" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year">2026</span> Tan Ye Kai · Plain HTML and CSS on GitHub Pages</p>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Tan Ye Kai</p>
+      <p>Hand-written HTML, CSS and JS · <a href="#hero">Back to top ↑</a></p>
     </div>
   </footer>
+
+  <dialog id="project-dialog" class="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="icon-btn dialog-close" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <p class="project-cat dialog-cat"></p>
+      <h3 id="dialog-title" class="dialog-title"></h3>
+      <p class="dialog-sum"></p>
+      <div class="dialog-body"></div>
+      <ul class="tags dialog-tags"></ul>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
