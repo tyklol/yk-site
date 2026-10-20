@@ -162,10 +162,8 @@
               <p class="entry-sub">Tenant billing for the Punggol Campus Multi-Energy Microgrid · school project, team
                 of 4</p>
               <ul class="bullets">
-                <li>Helped built an end-to-end energy metering and billing platform for a large private microgrid: reads
-                  every
-                  tenant meter each minute over Modbus TCP / SCADA-style data acquisition and automates monthly billing.
-                </li>
+                <li>Helped build an end-to-end energy metering and billing platform for a large private microgrid: reads
+                  every tenant meter each minute over Modbus TCP and automates monthly billing.</li>
                 <li>Designed the PostgreSQL schema with append-only history, giving full traceability from meter reading
                   to confirmed bill.</li>
                 <li>Made new meter types a data change, not a code change, using DB-driven register maps and audited SQL
@@ -173,8 +171,8 @@
                 <li>Automated billing file exchange with the utility partner over SFTP with PGP encryption.</li>
                 <li>Secured the platform with role-based access control, TOTP 2FA, login throttling and encrypted
                   secrets.</li>
-                <li>Delivered React and Chart.js dashboards with consumption and relevant details computed
-                  as register deltas, so no energy is double-counted or lost.</li>
+                <li>React and Chart.js dashboards, with consumption computed from register deltas so no energy is
+                  double-counted or lost.</li>
                 <li>Deployed on-prem behind a TLS reverse proxy, backed by 200+ unit tests and Playwright checks.</li>
               </ul>
               <ul class="tags">
@@ -182,6 +180,7 @@
                 <li>Flask</li>
                 <li>PostgreSQL</li>
                 <li>Docker</li>
+                <li>Modbus TCP</li>
                 <li>PGP / SFTP</li>
                 <li>React</li>
               </ul>
@@ -232,21 +231,26 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>SG Bus</h3>
-            <p class="project-sum">Live bus arrivals for Singapore, with a home-screen widget, arrival alerts and a
-              route planner.</p>
+            <p class="project-sum">A Singapore bus app with what the existing ones were missing for me: a home-screen
+              widget, an alert when I'm near a stop I track, and a map I can pan to see the stops around me.</p>
             <ul class="tags">
               <li>Kotlin</li>
-              <li>Compose</li>
-              <li>Room</li>
+              <li>Jetpack Compose</li>
+              <li>LTA DataMall API</li>
+              <li>OneMap</li>
+              <li>Location services</li>
             </ul>
-            <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
+            <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
               <img class="project-preview" src="previews/sg-bus.gif" width="360" height="800" loading="lazy"
                 alt="Nearby stops with live arrivals, buses moving on the map, then searching a place and plotting a route">
               <ul class="bullets">
-                <li>Arrival times from LTA DataMall, place search with OneMap, and routes drawn on an OpenStreetMap map.
-                </li>
-                <li>A home-screen widget, and notifications as your bus approaches.</li>
+                <li>Location-based alerts: a foreground service follows your position and, within 800 m of a tracked
+                  stop, shows a notification with that stop's live arrivals.</li>
+                <li>A home-screen widget with arrivals for favourite stops, without opening the app.</li>
+                <li>Pan the map and the nearby-stops list follows; buses on a selected route move live on the map.</li>
+                <li>Place search with OneMap and routes drawn with OSRM. Stops and routes are cached on the phone, so
+                  stop search works offline and understands abbreviations like "Blk" and "Opp".</li>
               </ul>
               <p class="details-note">Personal project</p>
             </div>
@@ -259,14 +263,15 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>Bench</h3>
-            <p class="project-sum">A local workbench with about 70 tools (PDF, media, transcription, files) and an
-              assistant that turns plain-English requests into tool chains.</p>
+            <p class="project-sum">One local app for file and media chores that usually take a different website each:
+              about 70 tools (PDF, media, transcription, files) and an assistant that turns a plain-English request
+              into a chain of tools. Files never leave the machine.</p>
             <ul class="tags">
               <li>Python</li>
               <li>FastAPI</li>
-              <li>JavaScript</li>
-              <li>SQLite</li>
               <li>Ollama</li>
+              <li>LLM tool calling</li>
+              <li>Whisper</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -275,12 +280,12 @@
               <p>One <code>@tool</code> declaration with typed parameters generates the GUI form, the REST endpoint and
                 the LLM function-calling schema, so adding a tool never touches the UI, API or job runner.</p>
               <ul class="bullets">
-                <li>"Ask Bench": a local Qwen 2.5 3B model plans chains of up to 4 tools, fills parameters and reads
-                  results back, in 0.2 to 0.5 s per answer. 40 of 40 on a routing eval.</li>
+                <li>"Ask Bench": a local Qwen 2.5 3B model plans chains of up to 4 tools, fills in their parameters and
+                  reads the results back, in 0.2 to 0.5 s per answer.</li>
                 <li>Hard safety rails: the model can't tick "book" or "apply" switches, never fills file fields from
                   model text, and only creates new files. Falls back to keyword routing when no model is running.</li>
-                <li>Job lanes with cancellation and chaining, SQLite history with a permanent archive, a sealed mode,
-                  and passcode-protected phone access.</li>
+                <li>Job lanes with cancellation and chaining, a permanent history of every run, a sealed mode that blocks
+                  access outside its folder, and passcode-protected phone access.</li>
                 <li>465 automated integration and headless-browser checks.</li>
               </ul>
               <p class="details-note">Personal project · private repo</p>
@@ -294,12 +299,14 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>Desktop Cat</h3>
-            <p class="project-sum">Cats, dogs, rabbits and hamsters that live on your desktop. They walk the taskbar,
-              climb window title bars, nap and bat at your cursor.</p>
+            <p class="project-sum">Cats, dogs, rabbits and hamsters that live on your desktop and use your real windows:
+              they walk the taskbar, climb title bars, nap and bat at your cursor. Every frame and sound is generated in
+              code.</p>
             <ul class="tags">
               <li>Electron</li>
               <li>TypeScript</li>
-              <li>Canvas</li>
+              <li>Win32 API</li>
+              <li>Canvas 2D</li>
               <li>Web Audio</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
@@ -327,6 +334,8 @@
             <ul class="tags">
               <li>C</li>
               <li>FreeRTOS</li>
+              <li>Raspberry Pi Pico W</li>
+              <li>PID control</li>
               <li>MQTT</li>
               <li>Next.js</li>
             </ul>
@@ -351,13 +360,16 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>Semantic course search</h3>
-            <p class="project-sum">A university course portal where students find modules by describing them in plain
-              English, backed by both MySQL and MongoDB.</p>
+            <p class="project-sum">Keyword search only works if you already know a module's name. This course portal
+              lets students describe what they want to learn, like "how to make websites", and finds the matching
+              modules.</p>
             <ul class="tags">
+              <li>Python</li>
               <li>Flask</li>
-              <li>MySQL</li>
-              <li>MongoDB</li>
+              <li>MongoDB Atlas</li>
               <li>Vector search</li>
+              <li>Sentence Transformers</li>
+              <li>MySQL</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -384,11 +396,13 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>File Manager</h3>
-            <p class="project-sum">An Android file manager built around one rule: never lose a file.</p>
+            <p class="project-sum">An Android file manager built around one rule: never lose a file. A move that fails
+              halfway can't leave a broken copy, deletes can be undone, and the app has no network access at all.</p>
             <ul class="tags">
               <li>Java</li>
+              <li>Android SDK</li>
               <li>Material 3</li>
-              <li>ExoPlayer</li>
+              <li>Media3 ExoPlayer</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -413,13 +427,14 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>CarouWatcher</h3>
-            <p class="project-sum">Watches Carousell for listings I want. A quick AI pass screens results, a second
-              reads each full listing against my notes, and matches arrive as one Telegram digest.</p>
+            <p class="project-sum">Good listings on Carousell go fast, and keyword alerts fill up with accessories, shops
+              and the wrong models. CarouWatcher has AI read each new listing against my notes and sends only real
+              matches, as one Telegram digest.</p>
             <ul class="tags">
               <li>Python</li>
               <li>Selenium</li>
               <li>Gemini API</li>
-              <li>SQLite</li>
+              <li>Telegram Bot API</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -428,8 +443,7 @@
               <ul class="bullets">
                 <li>Two-stage Gemini filtering: a lenient screen over the search grid, then a strict judge over each
                   full page.</li>
-                <li>Four headless workers fetch listings in parallel: about 3× faster, 20 listings in 31 s instead of
-                  100 s.</li>
+                <li>Four headless browsers fetch listings in parallel: 20 listings in 31 s instead of 100 s.</li>
                 <li>Five-key rotation with back-off on rate limits and model fallback on outages. Runs fail closed:
                   nothing is marked seen if the AI is down.</li>
                 <li>SQLite run history, a log of every decision, liveness alerts and a small web viewer.</li>
@@ -441,13 +455,16 @@
           <article class="project card spot reveal" data-cat="ai">
             <div class="project-top"><span class="project-cat">Video · ML</span><span>2026</span></div>
             <h3>Clip-to-Shorts pipeline</h3>
-            <p class="project-sum">Cuts a raw movie clip into a narrated, captioned vertical short in one command. ML
-              models analyse the footage and audio; ffmpeg does the editing.</p>
+            <p class="project-sum">Turning a movie clip into a short by hand means writing a script, recording a
+              voice-over, captioning and reframing it to vertical. This pipeline does all of it in one command: ML
+              models analyse the footage and audio, and ffmpeg does the editing.</p>
             <ul class="tags">
               <li>Python</li>
               <li>ffmpeg</li>
               <li>Whisper</li>
-              <li>Gemini</li>
+              <li>Gemini API</li>
+              <li>Hugging Face</li>
+              <li>CUDA</li>
             </ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -467,13 +484,14 @@
           <article class="project card spot reveal" data-cat="mobile ai">
             <div class="project-top"><span class="project-cat">Android · On-device ML</span><span>2026</span></div>
             <h3>TranslationLens</h3>
-            <p class="project-sum">Point the camera at an object to learn its name in another language, fully offline.
-            </p>
+            <p class="project-sum">Point the camera at an object to learn its name in another language, with
+              pronunciation, fully offline. Scanned words are saved for review, with streaks and levels.</p>
             <ul class="tags">
               <li>Kotlin</li>
+              <li>Jetpack Compose</li>
               <li>CameraX</li>
               <li>ML Kit</li>
-              <li>TFLite</li>
+              <li>TensorFlow Lite</li>
             </ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -496,13 +514,14 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>Signed steganography</h3>
-            <p class="project-sum">Hides an Ed25519-signed payload inside images, audio and video, then tells you
-              whether it has been tampered with.</p>
+            <p class="project-sum">Plain steganography hides data but can't tell you whether someone changed it. This tool
+              hides a digitally signed payload in images, audio and video, so the receiver can check where it came
+              from and catch tampering.</p>
             <ul class="tags">
               <li>Python</li>
-              <li>PySide6</li>
-              <li>Ed25519</li>
-              <li>pytest</li>
+              <li>Qt (PySide6)</li>
+              <li>NumPy</li>
+              <li>Digital signatures</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -521,6 +540,39 @@
             </div>
           </article>
 
+          <article class="project card spot reveal" data-cat="ai">
+            <div class="project-top"><span class="project-cat">Security · ML</span><span>2024</span></div>
+            <div class="project-thumb" aria-hidden="true">
+              <img src="previews/phishing-thumb.webp" width="720" height="450" alt="" loading="lazy">
+              <span class="project-play">▶ View</span>
+            </div>
+            <h3>Phishing email detector</h3>
+            <p class="project-sum">Paste in a suspicious email and get one verdict. A machine-learning model reads the
+              body, while the sender, links and attachments are checked against threat-intelligence services.</p>
+            <ul class="tags">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>scikit-learn</li>
+              <li>VirusTotal API</li>
+            </ul>
+            <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <img class="project-preview" src="previews/phishing.gif" width="720" height="450" loading="lazy"
+                alt="Scanning a fake account-suspension email, which is flagged as dangerous, then a normal meeting email, which comes back safe">
+              <ul class="bullets">
+                <li>A Multinomial Naive Bayes classifier trained on 33,268 emails from the Enron spam dataset, checked
+                  with a confusion matrix and ROC/AUC.</li>
+                <li>Sender addresses verified with Hunter.io; links and attachments submitted to VirusTotal and polled
+                  until the scan finishes.</li>
+                <li>Every check that was filled in counts toward one weighted score, so a body-only scan still gets a
+                  verdict.</li>
+                <li>My part: the Flask app, the Hunter.io and VirusTotal integrations, file uploads, scan history and
+                  the scoring that combines the checks.</li>
+              </ul>
+              <p class="details-note">Programming Fundamentals module · team of 5</p>
+            </div>
+          </article>
+
           <article class="project card spot reveal" data-cat="web">
             <div class="project-top"><span class="project-cat">Web · Full stack</span><span>2025</span></div>
             <h3>Smart Haven</h3>
@@ -530,6 +582,7 @@
               <li>React</li>
               <li>PHP</li>
               <li>MySQL</li>
+              <li>Bootstrap</li>
             </ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -543,6 +596,39 @@
             </div>
           </article>
 
+          <article class="project card spot reveal" data-cat="systems">
+            <div class="project-top"><span class="project-cat">Game · Java</span><span>2025</span></div>
+            <div class="project-thumb" aria-hidden="true">
+              <img src="previews/flappy-thumb.webp" width="720" height="450" alt="" loading="lazy">
+              <span class="project-play">▶ View</span>
+            </div>
+            <h3>Maths Flappy Bird</h3>
+            <p class="project-sum">Flappy Bird for practising arithmetic: fly through the gap with the right answer. It
+              runs on a small game engine we wrote to be reused, with engine and game code kept apart.</p>
+            <ul class="tags">
+              <li>Java</li>
+              <li>libGDX</li>
+              <li>OOP</li>
+              <li>Design patterns</li>
+            </ul>
+            <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
+            <div class="project-details" hidden>
+              <img class="project-preview" src="previews/flappy.gif" width="720" height="450" loading="lazy"
+                alt="Starting from the menu, flying through the right answers as the questions move from addition to multiplication and division, then a wrong answer ending on the death screen">
+              <ul class="bullets">
+                <li>Engine managers for entities, collisions, input, audio, movement and scenes hold no game rules, so
+                  another game can be built on them.</li>
+                <li>A Factory for scenes (menu, play, pause, settings, death), a Strategy for movement, a Singleton I/O
+                  manager, and an event dispatcher that forwards input to listeners.</li>
+                <li>Questions step up from addition to multiplication at 10 points and division at 20, and the pipes
+                  speed up with every point.</li>
+                <li>My part: input and I/O management (event dispatcher, controller, audio, saving the high score), the
+                  movement strategies, and integrating the engine code.</li>
+              </ul>
+              <p class="details-note">Object-Oriented Programming module · team of 5</p>
+            </div>
+          </article>
+
           <article class="project card spot reveal" data-cat="mobile">
             <div class="project-top"><span class="project-cat">Android</span><span>2026</span></div>
             <div class="project-thumb" aria-hidden="true">
@@ -550,25 +636,28 @@
               <span class="project-play">▶ View</span>
             </div>
             <h3>Cardex</h3>
-            <p class="project-sum">A booster-pack opening simulator for Pokémon, K-pop and Match Attax cards, with a GPU
-              holo-foil shader and about 8,000 cards.</p>
+            <p class="project-sum">Opening real booster packs costs money every time. Cardex recreates the feel (tearing
+              the pack, pulling the cards, the holo reveal) for Pokémon, K-pop and Match Attax, with about 8,000
+              cards.</p>
             <ul class="tags">
               <li>Kotlin</li>
-              <li>Compose</li>
-              <li>AGSL</li>
+              <li>Jetpack Compose</li>
+              <li>AGSL shaders</li>
               <li>Python</li>
+              <li>Real-ESRGAN</li>
             </ul>
             <button class="project-open" type="button">Read more + demo <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
               <img class="project-preview" src="previews/cardex.gif" width="360" height="800" loading="lazy"
                 alt="Tearing open a booster pack, pulling the cards out and flipping a veiled card into a holo rare">
               <ul class="bullets">
-                <li>A Jetpack Compose app, shipped across 22 APK versions.</li>
-                <li>The holo-foil effect is an AGSL runtime shader, with a gradient fallback on older devices.</li>
+                <li>Swipe to tear the pack, pull the cards out, and hold to reveal a rare. The holo-foil effect is an
+                  AGSL shader on the GPU, with a gradient fallback on older devices.</li>
+                <li>A collection, custom cards, sets and packs, and importable datapacks.</li>
                 <li>A Python data pipeline scrapes card data with one worker per IP, retries rate limits, upscales art
                   with Real-ESRGAN and compresses it to WebP.</li>
               </ul>
-              <p class="details-note">Personal project · hobby app, no monetisation</p>
+              <p class="details-note">Personal project · not monetised</p>
             </div>
           </article>
         </div>
