@@ -156,7 +156,6 @@
             <div class="project-top"><span class="project-cat">AI · Desktop app</span><span>2026</span></div>
             <h3>Bench</h3>
             <p class="project-sum">A local workbench with about 70 tools (PDF, media, transcription, files) and an assistant that turns plain-English requests into tool chains.</p>
-            <p class="project-stat"><strong>70</strong> tools, each declared once</p>
             <ul class="tags"><li>Python</li><li>FastAPI</li><li>JavaScript</li><li>SQLite</li><li>Ollama</li></ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -167,7 +166,7 @@
                 <li>Job lanes with cancellation and chaining, SQLite history with a permanent archive, a sealed mode, and passcode-protected phone access.</li>
                 <li>465 automated integration and headless-browser checks.</li>
               </ul>
-              <p class="details-note">Personal project · about 34k lines · private repo</p>
+              <p class="details-note">Personal project · private repo</p>
             </div>
           </article>
 
@@ -175,7 +174,6 @@
             <div class="project-top"><span class="project-cat">Desktop app</span><span>2026</span></div>
             <h3>Desktop Cat</h3>
             <p class="project-sum">Cats, dogs, rabbits and hamsters that live on your desktop. They walk the taskbar, climb window title bars, nap and bat at your cursor.</p>
-            <p class="project-stat"><strong>20k</strong> lines of TypeScript, v1.0 installer</p>
             <ul class="tags"><li>Electron</li><li>TypeScript</li><li>Canvas</li><li>Web Audio</li></ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -194,13 +192,12 @@
             <div class="project-top"><span class="project-cat">AI · Automation</span><span>2026</span></div>
             <h3>CarouWatcher</h3>
             <p class="project-sum">Watches Carousell for listings I want. A quick AI pass screens results, a second reads each full listing against my notes, and matches arrive as one Telegram digest.</p>
-            <p class="project-stat"><strong>100 s → 31 s</strong> for 20 listings</p>
             <ul class="tags"><li>Python</li><li>Selenium</li><li>Gemini API</li><li>SQLite</li></ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
               <ul class="bullets">
                 <li>Two-stage Gemini filtering: a lenient screen over the search grid, then a strict judge over each full page.</li>
-                <li>Four headless workers fetch listings in parallel, cutting 20 listings from about 100 s to 31 s.</li>
+                <li>Four headless workers fetch listings in parallel: about 3× faster, 20 listings in 31 s instead of 100 s.</li>
                 <li>Five-key rotation with back-off on rate limits and model fallback on outages. Runs fail closed: nothing is marked seen if the AI is down.</li>
                 <li>SQLite run history, a log of every decision, liveness alerts and a small web viewer.</li>
               </ul>
@@ -212,7 +209,6 @@
             <div class="project-top"><span class="project-cat">Embedded</span><span>2025</span></div>
             <h3>Autonomous robot car</h3>
             <p class="project-sum">FreeRTOS firmware for a line-following robot car on a Raspberry Pi Pico W, streaming live telemetry to a web dashboard.</p>
-            <p class="project-stat"><strong>PID</strong> control from encoder, IMU and IR input</p>
             <ul class="tags"><li>C</li><li>FreeRTOS</li><li>MQTT</li><li>Next.js</li></ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -229,7 +225,6 @@
             <div class="project-top"><span class="project-cat">Web · Search</span><span>2025</span></div>
             <h3>Semantic course search</h3>
             <p class="project-sum">A university course portal where students find modules by describing them in plain English, backed by both MySQL and MongoDB.</p>
-            <p class="project-stat"><strong>Top</strong> contributor in a team of 6</p>
             <ul class="tags"><li>Flask</li><li>MySQL</li><li>MongoDB</li><li>Vector search</li></ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -248,7 +243,6 @@
             <div class="project-top"><span class="project-cat">AI · Media</span><span>2026</span></div>
             <h3>AI Shorts generator</h3>
             <p class="project-sum">Turns a raw movie clip into a narrated, captioned vertical short, with its title, tags and description, in one command.</p>
-            <p class="project-stat"><strong>5</strong> ML models in one pipeline</p>
             <ul class="tags"><li>Python</li><li>ffmpeg</li><li>Whisper</li><li>Gemini</li></ul>
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
@@ -270,7 +264,7 @@
             <button class="project-open" type="button">Read more <span aria-hidden="true">→</span></button>
             <div class="project-details" hidden>
               <ul class="bullets">
-                <li>A Jetpack Compose app of about 25k lines, shipped across 22 APK versions.</li>
+                <li>A Jetpack Compose app, shipped across 22 APK versions.</li>
                 <li>The holo-foil effect is an AGSL runtime shader, with a gradient fallback on older devices.</li>
                 <li>A Python data pipeline scrapes card data with one worker per IP, retries rate limits, upscales art with Real-ESRGAN and compresses it to WebP.</li>
               </ul>
@@ -291,7 +285,7 @@
                 <li>No I/O on the main thread: one worker for every change, and a thumbnail pool that favours visible rows.</li>
                 <li>Duplicate and empty-folder finders, batch rename, zip, and image, text, PDF and video viewers.</li>
               </ul>
-              <p class="details-note">Personal project · about 11.5k lines · no network permission</p>
+              <p class="details-note">Personal project · no network permission</p>
             </div>
           </article>
 

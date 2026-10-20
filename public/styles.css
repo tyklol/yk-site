@@ -355,19 +355,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.04e
 .project-top { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--mono); font-size: 0.75rem; color: var(--faint); margin-bottom: 1.1rem; }
 .project-cat { color: var(--accent); font-family: var(--mono); font-size: 0.75rem; }
 .project h3 { font-size: 1.25rem; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
-.project-sum { color: var(--muted); font-size: 0.95rem; flex: 1; }
-.project-stat { font-size: 0.85rem; color: var(--faint); margin-bottom: 1.25rem; }
-.project-stat strong {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+.project-sum { color: var(--muted); font-size: 0.95rem; flex: 1; margin-bottom: 1.25rem; }
 .project-open {
   align-self: flex-start;
   margin-top: 1.25rem;
