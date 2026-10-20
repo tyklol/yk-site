@@ -352,6 +352,23 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.04e
 .project { display: flex; flex-direction: column; padding: 1.5rem; }
 .project:hover { background: var(--surface-hover); }
 .project-top { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--mono); font-size: 0.75rem; color: var(--faint); margin-bottom: 1.1rem; }
+/* Still frame on the card so it's obvious there's a demo to open. */
+.project-thumb { position: relative; overflow: hidden; margin: -0.25rem 0 1.1rem; border: 1px solid var(--border); border-radius: 10px; }
+.project-thumb img { display: block; width: 100%; height: auto; transition: transform 0.4s var(--ease); }
+.project:hover .project-thumb img { transform: scale(1.04); }
+.project-play {
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.project:hover .project-play { background: var(--accent); color: var(--bg); }
 .project-cat { color: var(--accent); font-family: var(--mono); font-size: 0.75rem; }
 .project h3 { font-size: 1.25rem; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
 .project-sum { color: var(--muted); font-size: 0.95rem; flex: 1; margin-bottom: 1.25rem; }
@@ -396,6 +413,18 @@ body:has(.dialog[open]) { overflow: hidden; }
 .dialog-cat { margin-bottom: 0.75rem; }
 .dialog-title { font-size: 1.75rem; letter-spacing: -0.035em; margin: 0 3rem 0.75rem 0; }
 .dialog-sum { color: var(--text); font-size: 1.05rem; }
+/* Wider dialog for previews; the image never upscales past its own size. */
+.dialog:has(.project-preview) { width: min(800px, calc(100% - 2rem)); }
+.project-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  margin: 1.25rem auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
 .dialog-body > p { color: var(--muted); }
 .dialog-body a { color: var(--accent); }
 .details-note { font-family: var(--mono); font-size: 0.8rem; color: var(--faint) !important; padding-top: 1rem; border-top: 1px solid var(--border); }
