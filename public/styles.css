@@ -475,6 +475,12 @@ body:has(.dialog[open]) { overflow: hidden; }
   .dialog-inner { padding: 1.5rem; }
 }
 
+@media (max-width: 380px) {
+  .nav { gap: 0.5rem; }
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 0.4rem 0.45rem; font-size: 0.825rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
