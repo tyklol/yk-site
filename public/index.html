@@ -3,19 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tan Ye Kai | Portfolio</title>
-  <meta name="description" content="Tan Ye Kai: software engineering student building fast, reliable web and ML projects.">
+  <title>Tan Ye Kai | Software Engineer</title>
+  <meta name="description" content="Tan Ye Kai: Software Engineering student at SIT building LLM-powered tools and system integrations. Open to a 12-month internship from May 2027.">
+  <meta property="og:title" content="Tan Ye Kai | Software Engineer">
+  <meta property="og:description" content="Software Engineering student at SIT building LLM-powered tools and system integrations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tyklol.github.io/yk-site/">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232357d6'/><text x='16' y='21.5' font-family='system-ui,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>YK</text></svg>">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="nav-brand" href="#hero">YK</a>
+      <a class="nav-brand" href="#hero">Tan Ye Kai</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#repos">Repos</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
           <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
@@ -26,95 +33,214 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <section id="hero" class="hero">
       <div class="container">
-        <p class="eyebrow">Hi, I'm</p>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to a 12-month internship, May 2027 to Apr 2028</p>
         <h1>Tan Ye Kai</h1>
-        <p class="tagline">Software engineering student building fast, reliable web and machine-learning projects.</p>
+        <p class="role">Software Engineering student at the Singapore Institute of Technology</p>
+        <p class="tagline">I build LLM-powered tools and system integrations: the kind of software where separate systems have to agree with each other reliably.</p>
         <ul class="link-row">
-          <li><a class="btn btn-primary" href="mailto:tykcuber@gmail.com">Email</a></li>
+          <li><a class="btn btn-primary" href="mailto:yekai.tyk@gmail.com">Email me</a></li>
           <li><a class="btn" href="https://github.com/tyklol" rel="noopener">GitHub</a></li>
-          <li><a class="btn" href="https://www.linkedin.com/in/your-linkedin-handle/" rel="noopener">LinkedIn</a></li>
+          <li><a class="btn" href="https://www.linkedin.com/in/ye-kai-tan/" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
     </section>
 
     <section id="about" class="section">
-      <div class="container narrow">
-        <h2>About</h2>
-        <p>I'm a computing student who enjoys turning ideas into working software, from small web tools to machine-learning experiments. I care about code that is easy to read, quick to load and simple to ship.</p>
-        <p>Right now I'm focused on performance optimisation and design, and on building delivery pipelines where changes are reviewed, tested and deployed automatically.</p>
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-grid">
+          <div>
+            <p>I'm a third-year Software Engineering student at SIT. Most of what I build connects real systems: energy meters to a billing database, a local LLM to a set of tools, a marketplace to a Telegram digest.</p>
+            <p>I work spec-first, often with AI coding agents doing the typing, and I test on real devices and real data before calling something done. I care about software that fails safely and is easy to read.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Education</dt><dd>BEng (Hons) ICT, Software Engineering, SIT<br><span class="muted">CGPA 3.99 / 5.00 · 2024 to present</span></dd></div>
+            <div><dt>Diploma</dt><dd>Information Technology, Singapore Polytechnic<br><span class="muted">CGPA 3.64 / 4.00 · 2019 to 2022</span></dd></div>
+            <div><dt>Award</dt><dd>1st Place, AI Vision Hackathon<br><span class="muted">FPT University Da Nang · Aug 2026</span></dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="section alt">
+    <section id="experience" class="section alt">
       <div class="container">
-        <h2>Skills</h2>
-        <div class="skill-groups">
-          <div class="skill-group">
-            <h3>Languages</h3>
-            <ul class="chips">
-              <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>HTML &amp; CSS</li><li>SQL</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Areas of focus</h3>
-            <ul class="chips">
-              <li>Web development</li><li>Performance optimisation</li><li>Machine learning</li><li>Security basics</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Tools</h3>
-            <ul class="chips">
-              <li>Git &amp; GitHub</li><li>GitHub Actions</li><li>Jupyter</li><li>Playwright</li><li>VS Code</li>
-            </ul>
-          </div>
-        </div>
+        <h2 class="section-title">Experience</h2>
+        <ol class="timeline">
+          <li class="entry">
+            <p class="entry-date">Jun 2026 to present</p>
+            <div>
+              <h3>Tenant billing pipeline · SIT × SP Group</h3>
+              <p class="entry-sub">Punggol Campus Multi-Energy Microgrid · Integrative Team Project, team of 4</p>
+              <ul class="bullets">
+                <li>Automated billing for Singapore's largest private microgrid: reads every tenant's energy meter each minute (Modbus TCP), stores it in PostgreSQL and produces the monthly bills sent to SP Services. Deployed and running.</li>
+                <li>Bills go out PGP-encrypted over SFTP; SP Services' feedback files come back and are reconciled automatically. Files that can't be read are quarantined for review, never dropped.</li>
+                <li>My part of the operator portal: meter and gateway setup, tariff changes, catch-up billing so downtime never causes a missed month, TOTP 2FA recovery, and hardening for public access.</li>
+                <li>Added alerts that name the failing meter and gateway, and checks that stop the scheduler double-running or stalling.</li>
+              </ul>
+              <ul class="tags"><li>Python</li><li>Flask</li><li>PostgreSQL</li><li>Docker</li><li>PGP / SFTP</li><li>React</li></ul>
+            </div>
+          </li>
+          <li class="entry">
+            <p class="entry-date">Mar 2021 to Sep 2021</p>
+            <div>
+              <h3>Software Tester · Beyondsoft Singapore</h3>
+              <p class="entry-sub">6-month internship (Grade A), then contract</p>
+              <ul class="bullets">
+                <li>Tested pre-release printers before market launch, including long-running hardware endurance tests.</li>
+                <li>Ran test cases, logged and tracked defects, and re-tested fixes with the development team before release.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+        <p class="muted small">National Service, Aug 2022 to Aug 2024.</p>
       </div>
     </section>
 
     <section id="projects" class="section">
       <div class="container">
-        <h2>Projects</h2>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Phishing Detector</h3>
-            <p>Classifies suspicious emails and URLs as phishing or legitimate using engineered features and ML models.</p>
-            <a class="card-link" href="https://github.com/tyklol/phishingdetector" rel="noopener">View project</a>
+        <h2 class="section-title">Selected projects</h2>
+        <div class="projects">
+          <article class="project">
+            <header>
+              <h3>Bench</h3>
+              <p class="project-meta">Personal · Sep to Oct 2026</p>
+            </header>
+            <p>A desktop toolkit with a local AI assistant. About 70 tools (PDF, media, transcription, files) behind one interface; you can ask for a job in plain English and a local model plans it.</p>
+            <ul class="bullets">
+              <li>Each tool is declared once; that declaration generates its form, REST endpoint and LLM function-calling schema.</li>
+              <li>A local Qwen model chains up to 4 tool calls, with hard limits on what it may run. 40/40 on a routing eval; 465 automated checks.</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>JavaScript</li><li>SQLite</li><li>Ollama</li></ul>
           </article>
-          <article class="card">
-            <h3>Chatbot (HTML)</h3>
-            <p>A lightweight browser-based chatbot interface built with plain HTML, CSS and JavaScript.</p>
-            <a class="card-link" href="https://github.com/tyklol/chatbothtml" rel="noopener">View project</a>
+
+          <article class="project">
+            <header>
+              <h3>CarouWatcher</h3>
+              <p class="project-meta">Personal · Oct 2026</p>
+            </header>
+            <p>An AI listing filter for Carousell. A quick first pass screens search results; a second pass reads each full listing against my criteria; matches arrive as one Telegram digest.</p>
+            <ul class="bullets">
+              <li>Parallel page fetching cut 20 listings from about 100 s to 31 s.</li>
+              <li>API-key rotation and model fallback; if the AI is down the run fails closed, so no listing is skipped unseen.</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>Selenium</li><li>Gemini API</li><li>SQLite</li><li>Telegram</li></ul>
           </article>
-          <article class="card">
-            <h3>Shrimp</h3>
-            <p>Data analysis and modelling notebook exploring a real-world dataset end to end.</p>
-            <a class="card-link" href="https://github.com/tyklol/shrimp" rel="noopener">View project</a>
+
+          <article class="project">
+            <header>
+              <h3>Desktop Cat</h3>
+              <p class="project-meta">Personal · 2026 · v1.0 installer</p>
+            </header>
+            <p>Pets that live on your desktop: they walk the taskbar, climb window title bars and bat at your cursor, without ever stealing focus.</p>
+            <ul class="bullets">
+              <li>Per-pixel click-through overlay, with native window data via FFI (Win32 / DWM, CoreGraphics, X11).</li>
+              <li>A utility-AI behaviour engine, procedural art, synthesised audio and hand-written GIF / APNG / WebP decoders. About 20k lines of TypeScript.</li>
+            </ul>
+            <ul class="tags"><li>Electron</li><li>TypeScript</li><li>Canvas</li><li>Web Audio</li><li>Vitest</li></ul>
+          </article>
+
+          <article class="project">
+            <header>
+              <h3>Autonomous robot car</h3>
+              <p class="project-meta">Embedded Systems module · 2025 · team of 2</p>
+            </header>
+            <p>FreeRTOS firmware for a line-following robot car on a Raspberry Pi Pico W, with live telemetry to a web dashboard.</p>
+            <ul class="bullets">
+              <li>PID speed control with encoder, IMU and IR sensor input; drivers and unit, integration and system tests in C.</li>
+              <li>Telemetry streamed over MQTT to a real-time Next.js dashboard.</li>
+            </ul>
+            <ul class="tags"><li>C</li><li>FreeRTOS</li><li>MQTT</li><li>Next.js</li></ul>
+            <a class="project-link" href="https://github.com/tyklol/INF2004-Robot-Car" rel="noopener">Source on GitHub</a>
+          </article>
+
+          <article class="project">
+            <header>
+              <h3>Semantic course search (UCMS)</h3>
+              <p class="project-meta">Database Systems module · 2025 · team of 6</p>
+            </header>
+            <p>A course portal where students find modules in natural language. Top contributor; I led semantic search and cloud hosting.</p>
+            <ul class="bullets">
+              <li>Modules embedded with sentence-transformers and queried with MongoDB Atlas Vector Search; results hydrated from MySQL.</li>
+              <li>Hosted and seeded both databases in the cloud.</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>Flask</li><li>MySQL</li><li>MongoDB</li><li>Vector search</li></ul>
+            <a class="project-link" href="https://github.com/panyc63/INF2003-Assignment" rel="noopener">Source on GitHub</a>
+          </article>
+
+          <article class="project">
+            <header>
+              <h3>Smart Haven</h3>
+              <p class="project-meta">Web Systems module · 2025 · team of 5</p>
+            </header>
+            <p>A full-stack smart-home store. Main contributor: React single-page app with login, cart and protected routes, on a PHP and MySQL API, plus an admin panel.</p>
+            <ul class="bullets">
+              <li>Prepared statements for every query; interface tested against WCAG accessibility guidelines.</li>
+            </ul>
+            <ul class="tags"><li>React</li><li>PHP</li><li>MySQL</li><li>Bootstrap</li></ul>
           </article>
         </div>
+
+        <h3 class="subsection-title">Apps</h3>
+        <ul class="apps">
+          <li>
+            <h4>File Manager <span class="muted">· Android</span></h4>
+            <p>Built around never losing a file: verified copy, fsync, atomic rename and a recoverable bin. No I/O on the main thread.</p>
+            <p class="app-stack">Java · Material 3 · ExoPlayer</p>
+          </li>
+          <li>
+            <h4>Cardex <span class="muted">· Android</span></h4>
+            <p>A trading-card pack-opening simulator with a GPU holo-foil shader and about 8,000 cards from a Python data pipeline.</p>
+            <p class="app-stack">Kotlin · Jetpack Compose · AGSL</p>
+          </li>
+          <li>
+            <h4>SG Bus <span class="muted">· Android</span></h4>
+            <p>Live bus arrivals, a home-screen widget, arrival alerts and a route planner on an OpenStreetMap map.</p>
+            <p class="app-stack">Kotlin · Compose · LTA DataMall</p>
+          </li>
+          <li>
+            <h4>Lucid <span class="muted">· Web app</span></h4>
+            <p>A private dream journal and trainer. Local-only: entries are encrypted in the browser (AES-GCM), and CSP blocks all network access.</p>
+            <p class="app-stack">React · TypeScript · Web Crypto</p>
+          </li>
+        </ul>
+        <p class="muted small">Most personal projects are in private repositories. Happy to walk through the code on request.</p>
       </div>
     </section>
 
-    <section id="repos" class="section alt">
+    <section id="skills" class="section alt">
       <div class="container">
-        <h2>Latest GitHub repositories</h2>
-        <p class="muted">Pulled live from GitHub.</p>
-        <div id="repo-list" class="card-grid" aria-live="polite">
+        <h2 class="section-title">Skills</h2>
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Python, JavaScript, TypeScript, Kotlin, Java, C, SQL, PHP</dd></div>
+          <div><dt>Web &amp; backend</dt><dd>Flask, FastAPI, REST APIs, React</dd></div>
+          <div><dt>AI</dt><dd>Gemini API, Ollama, function calling and structured output, Whisper, vector search</dd></div>
+          <div><dt>Data</dt><dd>PostgreSQL, MySQL, SQLite, MongoDB</dd></div>
+          <div><dt>Mobile &amp; embedded</dt><dd>Android (Jetpack Compose), Electron, FreeRTOS on Pico W</dd></div>
+          <div><dt>Tools</dt><dd>Git, Docker, Selenium, Playwright, pytest, GitHub Actions, AI coding agents</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="repos" class="section">
+      <div class="container">
+        <h2 class="section-title">Public repositories</h2>
+        <div id="repo-list" class="repo-grid" aria-live="polite">
           <p class="muted">Loading repositories…</p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container narrow center">
-        <h2>Contact</h2>
-        <p>Open to internships and graduate roles. The best way to reach me is email.</p>
-        <ul class="link-row center">
-          <li><a class="btn btn-primary" href="mailto:tykcuber@gmail.com">tykcuber@gmail.com</a></li>
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>I'm looking for a 12-month software engineering internship from May 2027. Email is the best way to reach me.</p>
+        <ul class="link-row">
+          <li><a class="btn btn-primary" href="mailto:yekai.tyk@gmail.com">yekai.tyk@gmail.com</a></li>
           <li><a class="btn" href="https://github.com/tyklol" rel="noopener">GitHub</a></li>
-          <li><a class="btn" href="https://www.linkedin.com/in/your-linkedin-handle/" rel="noopener">LinkedIn</a></li>
+          <li><a class="btn" href="https://www.linkedin.com/in/ye-kai-tan/" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
     </section>
@@ -122,7 +248,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year">2026</span> Tan Ye Kai</p>
+      <p>&copy; <span id="year">2026</span> Tan Ye Kai · Plain HTML and CSS on GitHub Pages</p>
     </div>
   </footer>
 

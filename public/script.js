@@ -21,7 +21,9 @@
     toggle.setAttribute('aria-pressed', String(isDark));
   }
 
-  applyTheme(readTheme() === 'dark');
+  // No saved choice: follow the OS setting.
+  var saved = readTheme();
+  applyTheme(saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   toggle.addEventListener('click', function () {
     var isDark = !document.body.classList.contains('dark');
@@ -73,7 +75,12 @@
         showMessage('No public repositories to show yet.');
         return;
       }
-      list.replaceChildren.apply(list, repos.map(renderRepo));
+      var shown = repos.filter(function (r) { return !r.fork && r.name !== 'yk-site'; }).slice(0, 6);
+      if (shown.length === 0) {
+        showMessage('No public repositories to show yet.');
+        return;
+      }
+      list.replaceChildren.apply(list, shown.map(renderRepo));
     })
     .catch(function () {
       showMessage('Could not load repositories right now. See them on GitHub: github.com/' + GITHUB_USER);
