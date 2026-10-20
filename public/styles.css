@@ -259,7 +259,6 @@ h1 {
 .section-head { margin-bottom: 3rem; max-width: 40rem; }
 .kicker { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.9rem; }
 h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.04em; }
-.section-sub { color: var(--muted); margin: 1rem 0 0; }
 
 /* Cards */
 .card {
